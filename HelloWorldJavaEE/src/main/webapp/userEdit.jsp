@@ -71,7 +71,7 @@ value='${user.email}' />" class="form-control"
 					<label> Gender</label> <input type="text"
 						value="<c:out
 value='${user.gender}' />" class="form-control"
-						name="language">
+						name="gender">
 				</fieldset>
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>

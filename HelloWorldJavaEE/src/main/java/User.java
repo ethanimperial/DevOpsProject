@@ -38,11 +38,11 @@ public class User {
 		this.email = email;
 	}
 
-	public String getgender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setgender(String gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
