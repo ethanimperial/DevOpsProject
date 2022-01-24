@@ -9,6 +9,7 @@
 <body>
 
 <form action="MovieServlet" method="post" >
+
 Title: <input type ="text" name="title">
 Story: <input type ="text" name="story">
 Cast: <input type ="text" name="cast">
