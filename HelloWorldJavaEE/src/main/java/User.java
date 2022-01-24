@@ -1,18 +1,18 @@
 
 public class User {
 
-	public User(String name, String password, String email, String language) {
+	public User(String name, String password, String email, String gender) {
 		super();
 		this.name = name;
 		this.password = password;
 		this.email = email;
-		this.language = language;
+		this.gender = gender;
 	}
 
 	protected String name;
 	protected String password;
 	protected String email;
-	protected String language;
+	protected String gender;
 
 	public String getName() {
 		return name;
@@ -38,12 +38,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getLanguage() {
-		return language;
+	public String getgender() {
+		return gender;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public void setgender(String gender) {
+		this.gender = gender;
 	}
 
 }

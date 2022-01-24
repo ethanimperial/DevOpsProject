@@ -32,7 +32,7 @@
 						<th>Name</th>
 						<th>Password</th>
 						<th>Email</th>
-						<th>Language</th>
+						<th>Gender</th>
 						<th>Actions</th>
 					</tr>
 				</thead>
@@ -46,7 +46,7 @@ information accordingly -->
 							<td><c:out value="${user.name}" /></td>
 							<td><c:out value="${user.password}" /></td>
 							<td><c:out value="${user.email}" /></td>
-							<td><c:out value="${user.language}" /></td>
+							<td><c:out value="${user.gender}" /></td>
 							<!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
 							<td><a href="edit?name=<c:out value='${user.name}'

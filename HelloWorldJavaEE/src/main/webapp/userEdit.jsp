@@ -68,9 +68,9 @@ value='${user.email}' />" class="form-control"
 						name="email">
 				</fieldset>
 				<fieldset class="form-group">
-					<label> Language</label> <input type="text"
+					<label> Gender</label> <input type="text"
 						value="<c:out
-value='${user.language}' />" class="form-control"
+value='${user.gender}' />" class="form-control"
 						name="language">
 				</fieldset>
 				<button type="submit" class="btn btn-success">Save</button>
