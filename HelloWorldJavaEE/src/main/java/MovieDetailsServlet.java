@@ -73,22 +73,120 @@ public class MovieDetailsServlet extends HttpServlet {
 		
 		String action = request.getServletPath();
 		 try {
-		 switch (action) {
-		 case "/insert":
-		 break;
-		 case "/delete":
-		 break;
-		 case "/edit":
-		 break;
-		 case "/update":
-		 break;
-		 default:
-		 listMovies(request, response);
-		 break;
-		 }
+			 
+			 switch (action) {
+			 case "/MovieDetailsServlet/delete":
+			 deleteMovie(request, response);
+			 break;
+			 
+			 case "/MovieDetailsServlet/edit":
+				 showEditForm(request, response);
+				 break;
+				 
+			 case "/MovieDetailsServlet/update":
+				 updateMovie(request, response);
+				 break;
+
+
+			
+			 case "/MovieDetailsServlet/dashboard":
+			 listMovies(request, response);
+			 break;
+			 }
+
 		 } catch (SQLException ex) {
 		 throw new ServletException(ex);
 		 }
+	}
+	
+	
+	//method to get parameter, query database for existing user data and redirect to user edit page
+	private void showEditForm(HttpServletRequest request, HttpServletResponse response)
+	throws SQLException, ServletException, IOException {
+	//get parameter passed in the URL
+	String title = request.getParameter("title");
+	Movie existingMovie = new Movie("", "", "", "", "", "", "", "","","");
+	// Step 1: Establishing a Connection
+	try (Connection connection = getConnection();
+	// Step 2:Create a statement using connection object
+	PreparedStatement preparedStatement =
+	connection.prepareStatement(SELECT_MOVIE_BY_ID);) {
+	preparedStatement.setString(1, title);
+	// Step 3: Execute the query or update query
+	ResultSet rs = preparedStatement.executeQuery();
+	// Step 4: Process the ResultSet object
+	while (rs.next()) {
+	title = rs.getString("title");
+	String story = rs.getString("story");
+	String cast = rs.getString("cast");
+	String genre = rs.getString("genre");
+	String rating = rs.getString("rating");
+	String duration = rs.getString("duration");
+	String releasedate = rs.getString("releasedate");
+	String ticketurl = rs.getString("ticketurl");
+	String trailerurl = rs.getString("trailerurl");
+	String image = rs.getString("image");
+	existingMovie = new Movie(title, story, cast, genre, rating,
+			duration, releasedate, ticketurl, trailerurl, image);
+	}
+	} catch (SQLException e) {
+	System.out.println(e.getMessage());
+	}
+	//Step 5: Set existingUser to request and serve up the userEdit form
+	request.setAttribute("movie", existingMovie);
+	request.getRequestDispatcher("/movieEdit.jsp").forward(request, response);
+	}
+	
+	//method to update the user table base on the form data
+	private void updateMovie(HttpServletRequest request, HttpServletResponse response)
+	throws SQLException, IOException {
+	//Step 1: Retrieve value from the request
+	String oriTitle = request.getParameter("oriTitle");
+	 String title = request.getParameter("title");
+	 String story = request.getParameter("story");
+	 String cast = request.getParameter("cast");
+	 String genre = request.getParameter("genre");
+	 String rating = request.getParameter("rating");
+	 String duration = request.getParameter("duration");
+	 String releasedate = request.getParameter("releasedate");
+	 String ticketurl = request.getParameter("ticketurl");
+	 String trailerurl = request.getParameter("trailerurl");
+	 String image = request.getParameter("image");
+
+	 //Step 2: Attempt connection with database and execute update user SQL query
+	 try (Connection connection = getConnection(); PreparedStatement statement =
+	connection.prepareStatement(UPDATE_MOVIES_SQL);) {
+	 statement.setString(1, title);
+	 statement.setString(2, story);
+	 statement.setString(3, cast);
+	 statement.setString(4, genre);
+	 statement.setString(5, rating);
+	 statement.setString(6, duration);
+	 statement.setString(7, releasedate);
+	 statement.setString(8, ticketurl);
+	 statement.setString(9, trailerurl);
+	 statement.setString(10, image);
+	 statement.setString(11, oriTitle);
+	 int i = statement.executeUpdate();
+	 }
+	
+	 response.sendRedirect("http://localhost:8080/HelloWorldJavaEE/MovieDetailsServlet/dashboard");
+	}
+	
+	
+	//method to delete user
+	private void deleteMovie(HttpServletRequest request, HttpServletResponse response)
+	throws SQLException, IOException {
+	//Step 1: Retrieve value from the request
+	 String name = request.getParameter("title");
+	 //Step 2: Attempt connection with database and execute delete user SQL query
+	 try (Connection connection = getConnection(); PreparedStatement statement =
+	connection.prepareStatement(DELETE_MOVIES_SQL);) {
+	 statement.setString(1, name);
+	 int i = statement.executeUpdate();
+	 }
+	 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
+	 response.sendRedirect("http://localhost:8080/HelloWorldJavaEE/MovieDetailsServlet/dashboard");
 	}
 	
 

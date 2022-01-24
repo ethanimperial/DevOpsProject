@@ -47,6 +47,7 @@ crossorigin="anonymous">
 					<c:forEach var="movie" items="${listMovies}">
 						<!-- For each user in the database, display their
 information accordingly -->
+
 						<tr>
 							<td><c:out value="${movie.title}" /></td>
 							<td><c:out value="${movie.story}" /></td>
@@ -57,11 +58,11 @@ information accordingly -->
 							<td><c:out value="${movie.releasedate}" /></td>
 							<td><c:out value="${movie.ticketurl}" /></td>
 							<td><c:out value="${movie.trailerurl}" /></td>
-							<td><c:out value="${movie.image}" /></td>
+							<td><c:out value="${movie.image}"/></td>
 							
 							<!-- For each user in the database, Edit/Delete
 buttons which invokes the edit/delete functions -->
-							<td><a href="edit?name=<c:out value='${movie.title}'
+							<td><a href="edit?title=<c:out value='${movie.title}'
 />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
 								href="delete?title=<c:out

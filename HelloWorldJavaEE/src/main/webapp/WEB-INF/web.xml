@@ -6,6 +6,19 @@
  <servlet-class>UserServlet</servlet-class>
  </servlet>
  
+ <servlet>
+ <servlet-name>MovieDetailsServlet</servlet-name>
+ <servlet-class>MovieDetailsServlet</servlet-class>
+ </servlet>
+ 
+  <servlet-mapping>
+ <servlet-name>MovieDetailsServlet</servlet-name>
+<url-pattern>/MovieDetailsServlet/dashboard</url-pattern>
+ <url-pattern>/MovieDetailsServlet/edit</url-pattern>
+ <url-pattern>/MovieDetailsServlet/update</url-pattern>
+ <url-pattern>/MovieDetailsServlet/delete</url-pattern>
+ </servlet-mapping>
+ 
  
 
  <servlet-mapping>
