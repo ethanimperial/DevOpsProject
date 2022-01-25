@@ -61,7 +61,7 @@ value='${movie.title}' />" class="form-control"
 				
 				
 				<fieldset class="form-group">
-					<label>Password</label> <input type="text"
+					<label>Story</label> <input type="text"
 						value="<c:out
 value='${movie.story}' />" class="form-control"
 						name="story">
@@ -69,7 +69,7 @@ value='${movie.story}' />" class="form-control"
 				
 				
 				<fieldset class="form-group">
-					<label>User Email</label> <input type="text"
+					<label>Cast</label> <input type="text"
 						value="<c:out
 value='${movie.cast}' />" class="form-control"
 						name="cast">
@@ -77,49 +77,49 @@ value='${movie.cast}' />" class="form-control"
 				
 				
 				<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Genre</label> <input type="text"
 						value="<c:out
 value='${movie.genre}' />" class="form-control"
 						name="genre">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Rating</label> <input type="text"
 						value="<c:out
 value='${movie.rating}' />" class="form-control"
 						name="rating">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Duration</label> <input type="text"
 						value="<c:out
 value='${movie.duration}' />" class="form-control"
 						name="duration">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Release Date </label> <input type="text"
 						value="<c:out
 value='${movie.releasedate}' />" class="form-control"
 						name="releasedate">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Ticket Link</label> <input type="text"
 						value="<c:out
 value='${movie.ticketurl}' />" class="form-control"
 						name="ticketurl">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Trailer Link</label> <input type="text"
 						value="<c:out
 value='${movie.trailerurl}' />" class="form-control"
 						name="trailerurl">
 				</fieldset>
 				
 							<fieldset class="form-group">
-					<label> Gender</label> <input type="text"
+					<label> Movie Image</label> <input type="text"
 						value="<c:out
 value='${movie.image}' />" class="form-control"
 						name="image">
