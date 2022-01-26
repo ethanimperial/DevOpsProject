@@ -186,7 +186,7 @@ public class MovieDetailsServlet extends HttpServlet {
 	 int i = statement.executeUpdate();
 	 }
 	 //Step 3: redirect back to UserServlet dashboard (note: remember to change the url to your project name)
-	 response.sendRedirect("http://localhost:8080/HelloWorldJavaEE/MovieDetailsServlet/dashboard");
+	 response.sendRedirect("http://localhost:8080/MovieReviewApp/MovieDetailsServlet/dashboard");
 	}
 	
 
