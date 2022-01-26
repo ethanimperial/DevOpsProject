@@ -22,7 +22,7 @@ crossorigin="anonymous">
 		</div>
 		<ul class="navbar-nav">
 			<li><a
-				href="<%=request.getContextPath()%>/UserServlet/dashboard"
+				href="<%=request.getContextPath()%>/MovieDetailsServlet/dashboard"
 				class="nav-link">Back to Dashboard</a></li>
 		</ul>
 	</nav>
