@@ -180,7 +180,7 @@ public class UserServlet extends HttpServlet {
 		}
 		// Step 3: redirect back to UserServlet (note: remember to change the url to
 		// your project name)
-		response.sendRedirect("http://localhost:8080/HelloWorldJavaEE/UserServlet/dashboard");
+		response.sendRedirect("http://localhost:8080/MovieReviewApp/UserServlet/dashboard");
 	}
 
 	// method to delete user

@@ -170,7 +170,7 @@ public class MovieDetailsServlet extends HttpServlet {
 	 int i = statement.executeUpdate();
 	 }
 	
-	 response.sendRedirect("http://localhost:8080/HelloWorldJavaEE/MovieDetailsServlet/dashboard");
+	 response.sendRedirect("http://localhost:8080/MovieReviewApp/MovieDetailsServlet/dashboard");
 	}
 	
 	
